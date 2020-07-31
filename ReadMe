@@ -1,0 +1,19 @@
+Spring Security JDBC
+
+1. You can create schmea.sql file, spring boot will automatically create the tables in the schema.sql file
+2. You can create data.sql file , spring boot will automatically insert the data from this file.
+
+
+For this examples, we are not doing the above 2.
+
+1. Here we have the controller
+
+Path : / , should be accessible by all
+Path : /admin, should ba accessible only by users who have Admin Role
+Path : /user, should be accessible by users who have either Admin Role or User Role.
+
+
+When you insert into db, make sure, that you insert the user role with the prefix "ROLE_"
+When you use in SpringSecurityConfig->configure Method to define the roles and paths,
+you should only use the role name and avoid the prefix "ROLE_"
+
